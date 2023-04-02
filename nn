@@ -1,1 +1,130 @@
-print("h")
+import random
+#print("hello I'm Angela")
+
+#possible_names = [""]
+#negative_statements = ["no","na","nope","capital no","nada"]
+#positive_statements = ["yes","yeah","yup","yeah baby","yes please","uuhun","eehen"]
+
+#real_name = " "
+#while possible_names == [""]:
+#	user_name = input(f"what's your{real_name}name? ")
+#	if len(user_name) in range(10,20):
+#		print('''
+#Jesse thats a long name !!!''')
+#		name_verifier = input("is that your real name? ").lower()
+#		if name_verifier in positive_statements:
+#			possible_names.append(user_name)
+#			print("okay just checking")
+#		elif name_verifier in negative_statements:
+#			real_name = " real "
+#			print('''
+#okay''')
+#	elif user_name == "":
+#		print('''
+#lol you can't possibly have a blank name
+#''')
+#	elif len(user_name) > 20:
+#		real_name = " real "
+#		print('''
+#name too long''')
+
+#	else:
+#		possible_names.append(user_name)
+#print(f'''
+#hello {user_name}''')
+topics_brain = {
+"i'm depressed": False,
+"nothing": False}
+
+blank_lines_complainer = ['''
+please stop entering blank lines''','''
+i dont understand blank lines''']
+
+booleanholder_0 = False
+while True:
+	if booleanholder_0 == True:
+		pre_input = "i said "
+	else:
+		pre_input = ""
+	made_talks_starter = input(f'''{pre_input}what would you like to discuss with me?
+>> ''')
+	if made_talks_starter in topics_brain:
+		topics_brain[made_talks_starter] = True
+		break
+	elif made_talks_starter == "":
+		print(random.choice(blank_lines_complainer))
+		booleanholder_0 = True
+	else:
+		break
+		
+		#major loops
+if topics_brain.get("i'm depressed") == True:
+	made_talks_starter = '''
+what happened?'''
+	made_talks = [["wrecked my car","sorry about that","you are the fault","me?"],["lost my uncle","sorry for your loss","thaks","sure"],["ost my uncle","sorry for your loss","thanks","sure","oko"],["st my uncle","sorry for your loss","thanks","sure"]]
+	made_talks_count = 0
+	made_talks_list_scroller = 0
+	max_made_talks = len(made_talks[made_talks_list_scroller])
+	booleanholder_1= False
+	booleanholder_2 = False
+	booleanholder_3 = ""
+	booleanholder_4 = False
+	booleanholder_5 = False
+	while booleanholder_5 == False:
+		while booleanholder_1== False:
+			if booleanholder_4 == True:
+				print(random.choice(blank_lines_complainer))
+				user_input = input(f'''i said {made_talks_starter.strip()}
+>> ''').lower()
+				booleanholder_1== True
+			elif booleanholder_4 == False:
+				user_input = input(f'''{made_talks_starter}
+>> ''').lower()
+				booleanholder_1== True
+			while True:
+				selected_list = made_talks[made_talks_list_scroller]
+				if user_input == selected_list[made_talks_count]:
+					made_talks_count += 1
+					booleanholder_2 = True
+					try:
+						print(f'''
+{selected_list[made_talks_count]}''')
+					except:
+						booleanholder_5 = True
+						booleanholder_1 = True
+						break
+					if max_made_talks - made_talks_count == 1:
+						booleanholder_5 = True
+						booleanholder_1= True
+						break
+					else:
+						user_input = input(">>").lower()
+						print(user_input)
+						while True:
+							if user_input == "":
+								print(random.choice(blank_lines_complainer))
+								user_input = input(f'''i said {selected_list[made_talks_count]}
+>> ''').lower()
+							elif user_input != "":
+								made_talks_count += 1	
+								break
+				elif user_input == "":
+					booleanholder_4 = True
+					break
+				else:
+					if booleanholder_2 == False:
+						if made_talks_list_scroller > len(made_talks) - 2:
+							booleanholder_5 = True
+							booleanholder_1= True
+							break
+						else:
+							made_talks_list_scroller += 1
+					elif booleanholder_2 == True:
+						booleanholder_5 = True
+						booleanholder_1= True
+						break
+	print("new assignment")
+	
+
+					
+				
